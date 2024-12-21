@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Loyd Angelo Bruno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1117;
+            color: #e4e6e7;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 100px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1c2b35, #0066cc);
+            color: #fff;
+            padding: 100px 20px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-img img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .header-img img:hover {
+            transform: scale(1.1);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            color: #dcdcdc;
+            margin-top: 10px;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+            background: rgba(15, 17, 23, 0.8);
+            padding: 8px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-buttons button {
+            background-color: #00b5e2;
+            color: #fff;
+            padding: 0px 45px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #007dbf;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 60px 20px;
+            background-color: #1d2d44;
+            margin: 40px 0;
+            border-radius: 12px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00b5e2;
+        }
+
+        .profile-info, .education, .personal-skills {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-info p,
+        .education li,
+        .personal-skills li {
+            font-size: 1.1rem;
+            color: #dcdcdc;
+            line-height: 1.8;
+        }
+
+        .education ul,
+        .personal-skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .education li,
+        .personal-skills li {
+            margin-bottom: 10px;
+            background-color: #1e2b38;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills-container, .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 70px;
+            justify-content: center;
+        }
+
+        .skill, .project, .education-item, .personal-skill-item {
+            background-color: #1e2b38;
+            padding: 20px;
+            border-radius: 10px;
+            width: 280px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover, .project:hover, .education-item:hover, .personal-skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill i, .project i, .education-item i, .personal-skill-item i {
+            font-size: 2.5rem;
+            color: #00b5e2;
+            margin-bottom: 15px;
+        }
+
+        .project h3, .skill h3, .education-item h3, .personal-skill-item h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .project p, .skill p, .education-item p, .personal-skill-item p {
+            font-size: 1.1rem;
+            color: #dcdcdc;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 2px solid #00b5e2;
+            background-color: #1d2d44;
+            color: #fff;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact input:focus, .contact textarea:focus {
+            border-color: #00e5e5;
+            outline: none;
+        }
+
+        .contact button {
+            background-color: #00b5e2;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #007dbf;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #1d2d44;
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        footer p {
+            margin: 15px 0;
+        }
+
+        footer a {
+            color: #00b5e2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        footer a:hover {
+            color: #00e5e5;
+        }
+
+        .whatsapp-btn {
+            background-color: #00e5e5;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-2px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #00b5e2;
+            color: #fff;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background-color: #007dbf;
+            transform: translateY(-5px);
+        }
+
+        /* Ajuste para as seções de "Meu Percurso Estudantil" e "Minhas Habilidades Pessoais" */
+        .education-item, .personal-skill-item {
+            width: calc(33% - 20px); /* Para que fiquem 3 itens lado a lado */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="header-img">
+                <img src="loyd.png" alt="Foto de Loyd Angelo Bruno">
+            </div>
+            <div class="header-text">
+                <h1>Bem-vindo ao meu portfólio</h1>
+                <p>Profissional em Suporte Informático | Design Gráfico | Tecnologia</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-buttons">
+        <button onclick="document.querySelector('.profile').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-user"></i> Sobre Mim</button>
+        <button onclick="document.querySelector('.personal-skills').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-user"></i> Habilidades Pessoais</button>
+        <button onclick="document.querySelector('.education').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-graduation-cap"></i> Percurso Estudantil</button>
+        <button onclick="document.querySelector('.skills').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-cogs"></i> Habilidades</button>
+        <button onclick="document.querySelector('.projects').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-briefcase"></i> Projetos</button>
+        <button onclick="document.querySelector('.contact').scrollIntoView({behavior: 'smooth'})"><i class="fas fa-envelope"></i> Contato</button>
+    </div>
+
+    <section class="profile">
+        <h2>Muito prazer, sou Loyd Angelo Bruno!</h2>
+        <div class="profile-info">
+            <p>
+                Sou um profissional de 17 anos, com uma grande paixão por tecnologia, design gráfico e computação em nuvem. Ao longo dos anos, adquiri experiência em suporte técnico, design de interfaces e desenvolvimento de sites. Estou sempre em busca de novos desafios para expandir meus conhecimentos e habilidades. Além disso, tenho a convicção de que a inovação tecnológica pode transformar o mundo ao nosso redor, e é isso que me motiva a continuar a explorar novas fronteiras.
+            </p>
+        </div>
+    </section>
+
+    <section class="education">
+        <h2>Meu Percurso Estudantil</h2>
+        <div class="skills-container">
+            <div class="education-item">
+                <h3>2019 - Ensino Primário</h3>
+                <p>Término do Ensino Primário (7ª Classe) na Escola Comunitária da Casa do Gaiato.</p>
+            </div>
+            <div class="education-item">
+                <h3>2022 - Ensino Secundário</h3>
+                <p>Término da 10ª Classe na Escola Secundária Eng. Felipe Jacinto Nyusi.</p>
+            </div>
+            <div class="education-item">
+                <h3>2023 - CV3</h3>
+                <p>Conclusão do CV3 no Instituto de Transportes e Comunicações no curso de Eletricidade Industrial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="personal-skills">
+        <h2>Minhas Habilidades Pessoais</h2>
+        <div class="skills-container">
+            <div class="personal-skill-item">
+                <h3>Trabalho em Grupo</h3>
+                <p>Trabalho bem em equipe, colaborando eficazmente com colegas para alcançar objetivos comuns.</p>
+            </div>
+            <div class="personal-skill-item">
+                <h3>Comunicação Assertiva</h3>
+                <p>Consigo transmitir minhas ideias de forma clara e direta, ouvindo e respeitando as opiniões dos outros.</p>
+            </div>
+            <div class="personal-skill-item">
+                <h3>Adaptabilidade</h3>
+                <p>Tenho facilidade em me adaptar a novos desafios e ambientes, aprendendo rapidamente novas habilidades e processos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Habilidades Técnicas</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Conhecimento em HTML para criação de páginas web.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Experiência em design responsivo e customização de layouts com CSS.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Domínio básico em JavaScript para interatividade e dinamismo de páginas.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Conhecimento em Python para automação e análise de dados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Meus Projetos</h2>
+        <div class="projects-container">
+            <div class="project">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Desenvolvimento de Portfólio Pessoal</h3>
+                <p>Criação de um site estático para apresentação de habilidades e projetos, utilizando HTML, CSS e JavaScript.</p>
+            </div>
+            <div class="project">
+                <i class="fas fa-cogs"></i>
+                <h3>Criação de Sites no Google Sites</h3>
+                <p>Desenvolvimento de um site focado em PCs gamers, usando a plataforma Google Sites.</p>
+            </div>
+            <div class="project">
+                <i class="fas fa-network-wired"></i>
+                <h3>Criação de uma LAN na ECCG</h3>
+                <p>Elaboração de um projeto de rede local (LAN) na Escola Comunitária da Casa do Gaiato.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Fale Comigo!</h2>
+        <form action="mailto:loydangelojoao@gmail.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <input type="text" placeholder="Seu celular" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Loyd Angelo Bruno</p>
+        <p>
+            <a href="https://www.instagram.com/loyd_angeloo/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/loyd-angelo-bruno-5426bb256" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        // Mostrar botão de voltar ao topo quando rolar para baixo
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

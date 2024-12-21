@@ -1,0 +1,55 @@
+Body {
+    Font-family: Arial, sans-serif;
+    Background-color: #000;
+    Color: #fff;
+    Margin: 0;
+    Padding: 0;
+}
+
+Section {
+    Padding: 20px;
+    Text-align: center;
+}
+
+H1, h2, h3 {
+    Color: #0066ff;
+}
+
+.profile p, .about p, .specialty p {
+    Font-size: 1em;
+    Line-height: 1.5;
+}
+
+Img {
+    Border-radius: 50%;
+    Width: 150px;
+}
+
+.specialties {
+    Display: flex;
+    Justify-content: space-around;
+}
+
+.specialty {
+    Width: 30%;
+}
+
+Form input, form textarea {
+    Width: 80%;
+    Margin: 10px 0;
+    Padding: 10px;
+}
+
+Button {
+    Background-color: #0066ff;
+    Color: #fff;
+    Padding: 10px 20px;
+    Border: none;
+    Cursor: pointer;
+}
+
+.social-links a {
+    Color: #0066ff;
+    Margin: 10px;
+    Text-decoration: none;
+}
